@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+  width: 100%;
+  padding: 1rem;
+}
+
+h1 {
+  margin: 1rem;
+  font-size: 3rem;
+  color: blue;
+}
+
+.add-aniversariante {
+  width: 50%;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.add-aniversariante h2 {
+  color: #fff;
+  font-size: 2rem;
+  align-self: center;
+}
+
+.add-aniversariante .btn {
+  align-self: center;
+}
+
+p {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+#nome {
+  width: max-content;
+}
+
+.input {
+  width: 5rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+}
+
+.input-btn {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  background-color: blue;
+  color: #fff;
+}
+
+#input-btn {
+  border: 1px solid #fff;
+  font-weight: bold;
+}
+
+.input-btn:hover {
+  cursor: pointer;
+  color: blue;
+  background-color: #fff;
+  transition: all 0.5s;
+}
