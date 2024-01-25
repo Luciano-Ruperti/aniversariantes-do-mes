@@ -76,7 +76,7 @@ function buscaAniversariante() {
             pessoa.nome + ". Dia: " + pessoa.diaNascimento + ". <br>";
         });
       } else {
-        msg2.innerHTML = "Nesse mes não teremos mais aniversariantes";
+        msg2.innerHTML = "Nesse mes, não teremos mais aniversariantes";
       }
     }
   }
