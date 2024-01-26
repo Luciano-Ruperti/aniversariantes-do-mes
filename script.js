@@ -3,6 +3,7 @@ function salvarNoLocalStorage() {
   var nome = document.getElementById("nome").value;
   var diaNascimento = document.getElementById("dia-nascimento").value;
   var mesNascimento = document.getElementById("mes-nascimento").value;
+  var salvarBtn = document.getElementById("input-btn");
 
   // Cria um objeto com esses valores
   var pessoa = {
@@ -42,6 +43,10 @@ function salvarNoLocalStorage() {
 
   console.log(pessoa);
   console.log(lista);
+
+  /*diaNascimento.innerHTML = "";
+  mesNascimento.value = "";
+  nome.value = "";*/
 }
 
 // Busca aniversariante na local storage
@@ -51,6 +56,9 @@ function buscaAniversariante() {
   let diaAtual = dataAtual.getDate();
   let msg1 = document.getElementById("msg1");
   let msg2 = document.getElementById("msg2");
+
+  let result = document.querySelector(".result");
+  result.style.display = "flex";
 
   // obtem array lista do local storage
   let listaJSON = localStorage.getItem("lista");
