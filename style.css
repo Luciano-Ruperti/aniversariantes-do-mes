@@ -121,6 +121,7 @@ p {
 @media (max-width: 640px) {
   .add-aniversariante {
     width: 90%;
+    height: 100%;
   }
 
   p {
