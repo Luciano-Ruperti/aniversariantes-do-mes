@@ -70,7 +70,7 @@ function buscaAniversariante() {
     var pessoa = lista[i];
 
     if (pessoa.mesNascimento == mesAtual && pessoa.diaNascimento == diaAtual) {
-      msg1.innerHTML = "Hoje é o aniversário de. " + pessoa.nome;
+      msg1.innerHTML = "Hoje é o aniversário de: " + pessoa.nome;
       encontrou = true;
       var aniversariantesDoMes = lista.filter(function (pessoa) {
         return (
@@ -81,16 +81,16 @@ function buscaAniversariante() {
         msg2.innerHTML = "Próximos aniversariantes desse mês: ";
         aniversariantesDoMes.forEach(function (pessoa) {
           msg2.innerHTML +=
-            pessoa.nome + ". Dia: " + pessoa.diaNascimento + ". <br>";
+            pessoa.nome + ", dia: " + pessoa.diaNascimento + ". <br>";
         });
       } else {
-        msg2.innerHTML = "Nesse mes, não teremos mais aniversariantes";
+        msg2.innerHTML = "Nesse mes, não teremos mais aniversariantes.";
       }
     }
   }
 
   if (!encontrou) {
-    msg1.innerHTML = "Hoje não temos aniversariantes";
+    msg1.innerHTML = "Hoje não temos aniversariantes.";
     var aniversariantesDoMes = lista.filter(function (pessoa) {
       return (
         pessoa.mesNascimento == mesAtual && pessoa.diaNascimento > diaAtual
@@ -100,10 +100,10 @@ function buscaAniversariante() {
       msg2.innerHTML = "Próximos aniversariantes desse mês: ";
       aniversariantesDoMes.forEach(function (pessoa) {
         msg2.innerHTML +=
-          pessoa.nome + ". Dia: " + pessoa.diaNascimento + ". <br>";
+          pessoa.nome + ", dia: " + pessoa.diaNascimento + ". <br>";
       });
     } else {
-      msg2.innerHTML = "Nesse mes, não teremos mais aniversariantes";
+      msg2.innerHTML = "Nesse mes, não teremos mais aniversariantes.";
     }
   }
 
