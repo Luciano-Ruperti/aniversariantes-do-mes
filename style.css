@@ -10,7 +10,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: aqua;
+  background: url(img/imagem_bg.jpg);
+  background-size: cover;
   width: 100%;
   padding: 1rem;
 }
@@ -18,12 +19,15 @@
 h1 {
   margin: 1rem;
   font-size: 3rem;
-  color: blue;
+  color: #ea00ff;
+  text-shadow: 3px 3px 5px blue;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .add-aniversariante {
-  width: 90%;
-  background-color: blue;
+  width: 60%;
+  background-color: #ea00ffb4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,13 +35,15 @@ h1 {
   gap: 1rem;
   margin: 1rem;
   padding: 1rem;
-  border-radius: 20px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 255, 0.836);
 }
 
 .add-aniversariante h2 {
   color: #fff;
   font-size: 2rem;
   align-self: center;
+  text-shadow: 3px 3px 5px blue;
 }
 
 .add-aniversariante .btn {
@@ -47,10 +53,11 @@ h1 {
 p {
   font-size: 1.5rem;
   color: #fff;
+  text-shadow: 3px 3px 5px blue;
 }
 
 #nome {
-  width: 90%;
+  width: 70%;
 }
 
 .input {
@@ -61,7 +68,9 @@ p {
   padding: 10px 15px;
   outline: none;
   border-radius: 10px;
-  border: none;
+  border: 1px solid #fff;
+  box-shadow: 3px 3px 5px rgba(0, 0, 255, 0.836);
+  background: transparent;
 }
 
 .input-btn {
@@ -71,8 +80,10 @@ p {
   outline: none;
   border-radius: 10px;
   border: none;
-  background-color: blue;
+  background: #ea00ff;
   color: #fff;
+  text-shadow: 3px 3px 5px blue;
+  box-shadow: 3px 3px 5px rgba(0, 0, 255, 0.836);
 }
 
 #input-btn {
