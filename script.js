@@ -1,15 +1,15 @@
 function salvarNoLocalStorage() {
   // Obtém os valores dos campos de entrada
-  var nome = document.getElementById("nome").value;
-  var diaNascimento = document.getElementById("dia-nascimento").value;
-  var mesNascimento = document.getElementById("mes-nascimento").value;
+  var nome = document.getElementById("nome");
+  var diaNascimento = document.getElementById("dia-nascimento");
+  var mesNascimento = document.getElementById("mes-nascimento");
   var salvarBtn = document.getElementById("input-btn");
 
   // Cria um objeto com esses valores
   var pessoa = {
-    nome: nome,
-    diaNascimento: diaNascimento,
-    mesNascimento: mesNascimento,
+    nome: nome.value,
+    diaNascimento: diaNascimento.value,
+    mesNascimento: mesNascimento.value,
   };
 
   // Obtém o array de objetos do Local Storage
@@ -41,12 +41,16 @@ function salvarNoLocalStorage() {
   // Salva a string JSON no Local Storage
   localStorage.setItem("lista", listaJSON);
 
-  console.log(pessoa);
-  console.log(lista);
-
-  /*diaNascimento.innerHTML = "";
+  // Limpa os campos de input
+  nome.value = "";
+  diaNascimento.value = "";
   mesNascimento.value = "";
-  nome.value = "";*/
+
+  // Coloca o foco no campo nome
+  nome.focus();
+
+  // retorna cor original do botão
+  salvarBtn.blur();
 }
 
 // Busca aniversariante na local storage
@@ -56,6 +60,7 @@ function buscaAniversariante() {
   let diaAtual = dataAtual.getDate();
   let msg1 = document.getElementById("msg1");
   let msg2 = document.getElementById("msg2");
+  let searchBtn = document.getElementById("search-btn");
 
   let result = document.querySelector(".result");
   result.style.display = "flex";
@@ -106,6 +111,8 @@ function buscaAniversariante() {
       msg2.innerHTML = "Nesse mes, não teremos mais aniversariantes.";
     }
   }
+
+  searchBtn.blur();
 
   const textoFalado1 = msg1.textContent;
   const textoFalado2 = msg2.textContent;
