@@ -17,18 +17,19 @@
 }
 
 h1 {
+  text-align: center;
   margin: 1rem;
   font-size: 3.5rem;
-  /*color: #ea00ff;*/
   color: #fff;
-  text-shadow: 3px 3px 5px blue;
+  text-shadow: 3px 3px 5px #705406;
   padding: 10px;
   border-radius: 10px;
 }
 
 .add-aniversariante {
   width: 60%;
-  background-color: #ea00ffb4;
+  /* background-color: #ea00ffb4;*/
+  background-color: #d8a310b9;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,14 +38,14 @@ h1 {
   margin: 1rem;
   padding: 1rem;
   border-radius: 15px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 255, 0.836);
+  box-shadow: 3px 3px 5px #705406;
 }
 
 .add-aniversariante h2 {
   color: #fff;
   font-size: 2rem;
   align-self: center;
-  text-shadow: 3px 3px 5px blue;
+  text-shadow: 3px 3px 5px #705406;
 }
 
 .add-aniversariante .btn {
@@ -54,7 +55,7 @@ h1 {
 p {
   font-size: 1.5rem;
   color: #fff;
-  text-shadow: 3px 3px 5px blue;
+  text-shadow: 3px 3px 5px #705406;
 }
 
 #nome {
@@ -70,7 +71,7 @@ p {
   outline: none;
   border-radius: 10px;
   border: 1px solid #fff;
-  box-shadow: 3px 3px 5px rgba(0, 0, 255, 0.836);
+  box-shadow: 3px 3px 5px #705406;
   background: transparent;
   color: #fff;
 }
@@ -82,10 +83,11 @@ p {
   outline: none;
   border-radius: 10px;
   border: none;
-  background: #ea00ff;
+  /* background: #ea00ff;*/
+  background: #d8a410;
   color: #fff;
-  text-shadow: 3px 3px 5px blue;
-  box-shadow: 3px 3px 5px rgba(0, 0, 255, 0.836);
+  text-shadow: 3px 3px 5px #705406;
+  box-shadow: 3px 3px 5px #705406;
 }
 
 #input-btn {
@@ -95,13 +97,14 @@ p {
 
 .input-btn:hover {
   cursor: pointer;
-  color: blue;
+  color: #d8a410;
   background-color: #fff;
   transition: all 0.5s;
 }
 
 .result {
-  background-color: #ea00ffb4;
+  /*background-color: #ea00ffb4;*/
+  background-color: #d8a410;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -110,7 +113,7 @@ p {
   margin: 1rem;
   padding: 1rem;
   border-radius: 15px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 255, 0.836);
+  box-shadow: 3px 3px 5px #705406;
 }
 
 @media (max-width: 640px) {
@@ -125,9 +128,8 @@ p {
   h1 {
     margin: 0.5rem;
     font-size: 2.5rem;
-    /*color: #ea00ff;*/
     color: #fff;
-    text-shadow: 3px 3px 5px blue;
+    text-shadow: 3px 3px 5px #705406;
     padding: 5px;
     border-radius: 10px;
   }
