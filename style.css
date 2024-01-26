@@ -28,7 +28,6 @@ h1 {
 
 .add-aniversariante {
   width: 60%;
-  /* background-color: #ea00ffb4;*/
   background-color: #d8a310b9;
   display: flex;
   flex-direction: column;
@@ -83,7 +82,6 @@ p {
   outline: none;
   border-radius: 10px;
   border: none;
-  /* background: #ea00ff;*/
   background: #d8a410;
   color: #fff;
   text-shadow: 3px 3px 5px #705406;
@@ -100,10 +98,10 @@ p {
   color: #d8a410;
   background-color: #fff;
   transition: all 0.5s;
+  text-shadow: none;
 }
 
 .result {
-  /*background-color: #ea00ffb4;*/
   background-color: #d8a410;
   display: none;
   flex-direction: column;
