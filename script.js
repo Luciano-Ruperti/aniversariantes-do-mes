@@ -105,26 +105,10 @@ function buscaAniversariante() {
     }
   }
 
-  /*if (!encontrou) {
-    msg1.innerHTML = "Hoje não temos aniversariantes.";
-    var aniversariantesDoMes = lista.filter(function (pessoa) {
-      return (
-        pessoa.mesNascimento == mesAtual && pessoa.diaNascimento > diaAtual
-      );
-    });
-    if (aniversariantesDoMes.length > 0) {
-      msg2.innerHTML = "Próximos aniversariantes desse mês: ";
-      aniversariantesDoMes.forEach(function (pessoa) {
-        msg2.innerHTML +=
-          pessoa.nome + ", dia: " + pessoa.diaNascimento + ". <br>";
-      });
-    } else {
-      msg2.innerHTML = "Nesse mês, não teremos mais aniversariantes.";
-    }
-  }*/
-
+  // Limpa os campos de entrada
   searchBtn.blur();
 
+  // Fala resultado
   const textoFalado1 = msg1.textContent;
   const textoFalado2 = msg2.textContent;
 
