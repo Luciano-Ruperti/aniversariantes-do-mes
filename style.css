@@ -21,6 +21,8 @@ h1 {
   margin: 1rem;
   font-size: 3.5rem;
   color: #fff;
+  background-color: #d8a310d2;
+  box-shadow: 3px 3px 5px #705406;
   text-shadow: 3px 3px 5px #705406;
   padding: 10px;
   border-radius: 10px;
@@ -28,7 +30,7 @@ h1 {
 
 .add-aniversariante {
   width: 60%;
-  background-color: #d8a310b9;
+  background-color: #d8a310d2;
   display: flex;
   flex-direction: column;
   justify-content: center;
