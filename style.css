@@ -34,7 +34,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: flex-start;
   gap: 1rem;
   margin: 1rem;
   padding: 1rem;
@@ -53,22 +53,25 @@ h1 {
   align-self: center;
 }
 
-p {
+.input-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 1.5rem;
   color: #fff;
   text-shadow: 3px 3px 5px #705406;
+  width: 100%;
 }
 
-#nome {
-  width: 70%;
-}
+/*#nome {
+  width: 100%;
+}*/
 
 #search-btn {
   background-color: red;
 }
 
 .input {
-  width: 5rem;
   margin-left: 1rem;
   margin-top: 0.5rem;
   font-size: 1.5rem;
@@ -79,6 +82,8 @@ p {
   box-shadow: 3px 3px 5px #705406;
   background: transparent;
   color: #fff;
+  flex-grow: 2;
+  width: 100%;
 }
 
 .input-btn {
@@ -133,13 +138,16 @@ p {
   h1 {
     margin: 0.5rem;
     font-size: 2.5rem;
-    color: #fff;
-    text-shadow: 3px 3px 5px #705406;
-    padding: 5px;
-    border-radius: 10px;
   }
 
   h2 {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .add-aniversariante {
+    width: 80%;
+    height: 100%;
   }
 }
