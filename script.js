@@ -71,21 +71,21 @@ function validaInformacoes(nome, diaNascimento, mesNascimento) {
 
   // verifica se preencheu todos os campos
   if (nome === "" || dia === 0 || mes === 0) {
-    msgErro.innerText = "*** Preencha os três campos ***";
+    msgErro.innerText = "* Preencha os três campos *";
     // verifica se o nome é válido
   } else if (!/^[a-zA-Z\s]+$/.test(nome) || nome.length < 2) {
-    msgErro.innerText = "*** Nome inválido ***";
+    msgErro.innerText = "* Nome inválido *";
   }
   // verifica se o mês é válido
   else if (mes < 1 || mes > 12) {
-    msgErro.innerText = "*** Mês inválido ***";
+    msgErro.innerText = "* Mês inválido *";
   } else if (
     dia < 1 ||
     (mes === 2 && dia > 29) ||
     (mesesCom30Dias.includes(mes) && dia > 30) ||
     (mesesCom31Dias.includes(mes) && dia > 31)
   ) {
-    msgErro.innerText = "*** Dia inválido ***";
+    msgErro.innerText = "* Dia inválido *";
   } else {
     preencheu = true;
     //msgErro.innerText = "*** Contato adicionado ***";
