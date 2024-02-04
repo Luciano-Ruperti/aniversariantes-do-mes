@@ -72,8 +72,12 @@ function validaInformacoes(nome, diaNascimento, mesNascimento) {
   // verifica se preencheu todos os campos
   if (nome === "" || dia === 0 || mes === 0) {
     msgErro.innerText = "*** Preencha os três campos ***";
-    // verifica se o mês é válido
-  } else if (mes < 1 || mes > 12) {
+    // verifica se o nome é válido
+  } else if (!/^[a-zA-Z\s]+$/.test(nome) || nome.length < 2) {
+    msgErro.innerText = "*** Nome inválido ***";
+  }
+  // verifica se o mês é válido
+  else if (mes < 1 || mes > 12) {
     msgErro.innerText = "*** Mês inválido ***";
   } else if (
     dia < 1 ||
