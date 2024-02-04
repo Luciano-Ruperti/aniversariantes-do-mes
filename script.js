@@ -1,56 +1,93 @@
 function salvarNoLocalStorage() {
   // Obtém os valores dos campos de entrada
-  var nome = document.getElementById("nome");
-  var diaNascimento = document.getElementById("dia-nascimento");
-  var mesNascimento = document.getElementById("mes-nascimento");
-  var salvarBtn = document.getElementById("input-btn");
+  let nome = document.getElementById("nome");
+  let diaNascimento = document.getElementById("dia-nascimento");
+  let mesNascimento = document.getElementById("mes-nascimento");
+  let salvarBtn = document.getElementById("input-btn");
+  let msgErro = document.getElementById("msg-erro");
 
-  // Cria um objeto com esses valores
-  var pessoa = {
-    nome: nome.value,
-    diaNascimento: diaNascimento.value,
-    mesNascimento: mesNascimento.value,
-  };
+  let preencheu = validaInformacoes(nome, diaNascimento, mesNascimento);
 
-  // Obtém o array de objetos do Local Storage
-  var listaJSON = localStorage.getItem("lista");
-  var lista = listaJSON ? JSON.parse(listaJSON) : [];
+  if (preencheu) {
+    // Cria um objeto com esses valores
+    var pessoa = {
+      nome: nome.value,
+      diaNascimento: diaNascimento.value,
+      mesNascimento: mesNascimento.value,
+    };
 
-  // Adiciona o novo objeto ao array
-  lista.push(pessoa);
+    // Obtém o array de objetos do Local Storage
+    var listaJSON = localStorage.getItem("lista");
+    var lista = listaJSON ? JSON.parse(listaJSON) : [];
 
-  // ordena a lista por mes e dia
-  function compare(a, b) {
-    var mesA = Number(a.mesNascimento);
-    var mesB = Number(b.mesNascimento);
-    var diaA = Number(a.diaNascimento);
-    var diaB = Number(b.diaNascimento);
+    // Adiciona o novo objeto ao array
+    lista.push(pessoa);
 
-    if (mesA < mesB) return -1;
-    if (mesA > mesB) return 1;
-    if (diaA < diaB) return -1;
-    if (diaA > diaB) return 1;
-    return 0;
+    // ordena a lista por mes e dia
+    function compare(a, b) {
+      var mesA = Number(a.mesNascimento);
+      var mesB = Number(b.mesNascimento);
+      var diaA = Number(a.diaNascimento);
+      var diaB = Number(b.diaNascimento);
+
+      if (mesA < mesB) return -1;
+      if (mesA > mesB) return 1;
+      if (diaA < diaB) return -1;
+      if (diaA > diaB) return 1;
+      return 0;
+    }
+
+    lista.sort(compare);
+
+    // Converte o array em uma string JSON
+    var listaJSON = JSON.stringify(lista);
+
+    // Salva a string JSON no Local Storage
+    localStorage.setItem("lista", listaJSON);
+
+    // Limpa os campos de input
+    nome.value = "";
+    diaNascimento.value = "";
+    mesNascimento.value = "";
+    msgErro.innerText = "";
+
+    // Coloca o foco no campo nome
+    nome.focus();
+
+    // retorna cor original do botão
+    salvarBtn.blur();
   }
+}
 
-  lista.sort(compare);
+function validaInformacoes(nome, diaNascimento, mesNascimento) {
+  nome = nome.value;
+  dia = Number(diaNascimento.value);
+  mes = Number(mesNascimento.value);
+  console.log(nome, dia, mes);
+  const mesesCom30Dias = [4, 6, 9, 11];
+  const mesesCom31Dias = [1, 3, 5, 7, 8, 10, 12];
+  let preencheu = false;
+  let msgErro = document.getElementById("msg-erro");
 
-  // Converte o array em uma string JSON
-  var listaJSON = JSON.stringify(lista);
-
-  // Salva a string JSON no Local Storage
-  localStorage.setItem("lista", listaJSON);
-
-  // Limpa os campos de input
-  nome.value = "";
-  diaNascimento.value = "";
-  mesNascimento.value = "";
-
-  // Coloca o foco no campo nome
-  nome.focus();
-
-  // retorna cor original do botão
-  salvarBtn.blur();
+  // verifica se preencheu todos os campos
+  if (nome === "" || dia === 0 || mes === 0) {
+    msgErro.innerText = "*** Preencha os três campos ***";
+    // verifica se o mês é válido
+  } else if (mes < 1 || mes > 12) {
+    msgErro.innerText = "*** Mês inválido ***";
+  } else if (
+    dia < 1 ||
+    (mes === 2 && dia > 29) ||
+    (mesesCom30Dias.includes(mes) && dia > 30) ||
+    (mesesCom31Dias.includes(mes) && dia > 31)
+  ) {
+    msgErro.innerText = "*** Dia inválido ***";
+  } else {
+    preencheu = true;
+    //msgErro.innerText = "*** Contato adicionado ***";
+    //msgErro.style.color = "green";
+  }
+  return preencheu;
 }
 
 // Busca aniversariante na local storage
