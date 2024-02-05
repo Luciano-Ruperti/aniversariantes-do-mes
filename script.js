@@ -73,8 +73,7 @@ function validaInformacoes(nome, diaNascimento, mesNascimento) {
   if (nome === "" || dia === 0 || mes === 0) {
     msgErro.innerText = "* Preencha os três campos *";
     // verifica se o nome é válido
-  } else if (!/^[a-zA-Z\s]+$/.test(nome) || nome.length < 2) {
-    msgErro.innerText = "* Nome inválido *";
+  } else if (!/^[\p{L}\s]*$/gu.test(nome) || nome.length < 2) {
   }
   // verifica se o mês é válido
   else if (mes < 1 || mes > 12) {
@@ -123,7 +122,11 @@ function buscaAniversariante() {
     if (aniversariantesDoDia.length > 0) {
       msg1.innerHTML = "Hoje é o aniversário de: ";
       aniversariantesDoDia.forEach(function (pessoa) {
-        msg1.innerHTML += pessoa.nome + ". <br>";
+        if (msg1.innerHTML === "Hoje é o aniversário de: ") {
+          msg1.innerHTML += pessoa.nome + ". <br>";
+        } else {
+          msg1.innerHTML += "e também de: " + pessoa.nome + ". <br>";
+        }
       });
     } else {
       msg1.innerHTML = "Hoje não temos aniversariantes.";
