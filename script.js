@@ -6,6 +6,8 @@ function salvarNoLocalStorage() {
   let salvarBtn = document.getElementById("input-btn");
   let msgErro = document.getElementById("msg-erro");
 
+  msgErro.innerText = "";
+
   let preencheu = validaInformacoes(nome, diaNascimento, mesNascimento);
 
   if (preencheu) {
@@ -49,7 +51,6 @@ function salvarNoLocalStorage() {
     nome.value = "";
     diaNascimento.value = "";
     mesNascimento.value = "";
-    msgErro.innerText = "";
 
     // Coloca o foco no campo nome
     nome.focus();
@@ -68,17 +69,20 @@ function validaInformacoes(nome, diaNascimento, mesNascimento) {
   const mesesCom31Dias = [1, 3, 5, 7, 8, 10, 12];
   let preencheu = false;
   let msgErro = document.getElementById("msg-erro");
+  msgErro.style.color = "rgb(255, 5, 5)";
 
   // verifica se preencheu todos os campos
   if (nome === "" || dia === 0 || mes === 0) {
     msgErro.innerText = "* Preencha os três campos *";
     // verifica se o nome é válido
   } else if (!/^[\p{L}\s]*$/gu.test(nome) || nome.length < 2) {
+    msgErro.innerText = "* Nome inválido *";
   }
   // verifica se o mês é válido
   else if (mes < 1 || mes > 12) {
     msgErro.innerText = "* Mês inválido *";
-  } else if (
+  } // verifica se o dia é válido
+  else if (
     dia < 1 ||
     (mes === 2 && dia > 29) ||
     (mesesCom30Dias.includes(mes) && dia > 30) ||
@@ -87,8 +91,8 @@ function validaInformacoes(nome, diaNascimento, mesNascimento) {
     msgErro.innerText = "* Dia inválido *";
   } else {
     preencheu = true;
-    //msgErro.innerText = "*** Contato adicionado ***";
-    //msgErro.style.color = "green";
+    msgErro.innerText = "* Contato adicionado *";
+    msgErro.style.color = "green";
   }
   return preencheu;
 }

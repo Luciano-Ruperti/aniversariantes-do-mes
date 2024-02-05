@@ -85,13 +85,11 @@ h1 {
 }
 
 #msg-erro {
-  color: #fff;
-  background-color: red;
+  color: rgb(255, 5, 5);
+  background-color: #ffffff9f;
   font-size: 1.7rem;
   font-weight: bolder;
-  text-shadow: none;
   align-self: center;
-  /*padding: 5px 10px;*/
   border-radius: 5px;
 }
 
