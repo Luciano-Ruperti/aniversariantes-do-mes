@@ -70,6 +70,7 @@ function validaInformacoes(nome, diaNascimento, mesNascimento) {
   let preencheu = false;
   let msgErro = document.getElementById("msg-erro");
   msgErro.style.color = "rgb(255, 5, 5)";
+  msgErro.style.display = "block";
 
   // verifica se preencheu todos os campos
   if (nome === "" || dia === 0 || mes === 0) {
@@ -94,6 +95,11 @@ function validaInformacoes(nome, diaNascimento, mesNascimento) {
     msgErro.innerText = "* Contato adicionado *";
     msgErro.style.color = "green";
   }
+  // apaga msg após 3 segundos
+  setTimeout(function () {
+    msgErro.style.display = "none";
+  }, 3000);
+
   return preencheu;
 }
 
