@@ -85,7 +85,7 @@ h1 {
 }
 
 #msg-erro {
-  color: rgb(255, 5, 5);
+  color: #ff0505;
   background-color: #ffffff9f;
   font-size: 1.7rem;
   font-weight: bolder;

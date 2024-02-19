@@ -1,0 +1,78 @@
+{
+  "id": "/C:\\Users\\Luciano Ruperti\\Documents\\estudos\\aniversariantes-do-mes\\aniversariantes-do-mes",
+  "dir": "ltr",
+  "lang": "pt",
+  "name": "Aniversariantes do Mês",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "/index.html",
+  "short_name": "Aniversariantes",
+  "theme_color": "#ff0505",
+  "description": "App que fala quais são nossos contatos que fazem aniversário no mês atual. Recomendado principalmente para pessoas com deficiência visual, pela facilidade de poder escutar as informações fornecidas, dispensando a leitura. Num primeiro momento é necessário alimentar a memória do app com seus contatos, incluindo nome e data de nascimento. Com esse cadastro feito, basta consultar com um clique e escutar quem são os aniversariantes daquele mês.",
+  "orientation": "portrait",
+  "background_color": "#d8a310",
+  "prefer_related_applications": false,
+  "display_override": ["window-controls-overlay"],
+  "screenshots": [
+    {
+      "src": "assets/screen.png"
+    },
+    {
+      "src": "assets/screen.png"
+    },
+    {
+      "src": "assets/screen.png"
+    }
+  ],
+  "features": ["Cross Platform", "low-latency inking", "fast", "useful AI"],
+  "icons": [
+    {
+      "src": "/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "lifestyle",
+    "personalization",
+    "productivity",
+    "social",
+    "utilities"
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "shortcuts": [
+    {
+      "name": "Start Live Session",
+      "short_name": "Start Live",
+      "description": "Jump direction into starting or joining a live session",
+      "url": "/?startLive",
+      "icons": [
+        {
+          "src": "/assets/icon/256.png",
+          "sizes": "256x256"
+        }
+      ]
+    }
+  ]
+}
